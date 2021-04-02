@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+$.ajax({
+  type: "GET",
+  url: "http://utan.php.xdomain.jp/lovelivedatabase/api.php?id=1",//grade groups id
+}).done(function( msg ) {
+    document.write( "データ取得: " + msg );
+});
+//http://localhost/html/Blog/api2.php?grade=2
+</script>
+</html>
