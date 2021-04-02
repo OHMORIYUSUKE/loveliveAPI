@@ -53,7 +53,7 @@ http://utan.php.xdomain.jp/lovelivedatabase/api.php?groups=myu-z
     "description": "μ’sの発起人であり牽引者。多少の困難があっても持ち前の超ポジティブシンキングで次々と突破していくμ’sのリーダー。",
     "image": "https://..."
   },
-  ・・・
+
   {
     "id": "9",
     "groups": "myu-z",
@@ -95,7 +95,7 @@ http://utan.php.xdomain.jp/lovelivedatabase/api.php?grade=2
     "description": "μ’sの発起人であり牽引者。多少の困難があっても持ち前の超ポジティブシンキングで次々と突破していくμ’sのリーダー。",
     "image": "https://..."
   },
-  ・・・
+
   {
     "id": "25",
     "groups": "nizi",
