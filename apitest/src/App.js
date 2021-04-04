@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import React, { useState } from 'react';
 
+import PostCard from './components/PostCard';
+
 function App() {
   const [posts, setPosts] = useState([]);
   // GET通信
@@ -26,13 +28,15 @@ function App() {
     <>
     {posts.map((post) => (
       <>
-        <p>{post.name}</p>
-        <p>CV:{post.CV}</p>
-        <p>{post.grade}年生</p>
-        <p>{post.birthday}生まれ</p>
-        <p>{post.bloodType}型</p>
-        <p>{post.height}cm</p>
-        <img style={{width:'200px'}} src={post.image} alt='画像'/>
+        <PostCard 
+          name={post.name} 
+          CV={post.CV}  
+          grade={post.grade} 
+          birthday={post.birthday}
+          bloodType={post.bloodType}
+          height={post.height}
+          image={post.image}
+          />
       </>
       ))}
     </>
