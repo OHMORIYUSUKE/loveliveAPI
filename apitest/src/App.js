@@ -2,7 +2,7 @@ import './App.css';
 
 import axios from 'axios';
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 import PostCard from './components/PostCard';
 
@@ -11,18 +11,18 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 function App() {
   const [posts, setPosts] = useState([]);
-  // GET通信
-  axios.get('http://utan.php.xdomain.jp/lovelivedatabase/api.php?groups=all')
-  // thenで成功した場合の処理をかける
-  .then(response => {
-      // console.log('status:', response.status); // 200
-      // console.log('body:', response.data);     // response body.
 
-      setPosts(response.data);
-  // catchでエラー時の挙動を定義する
-  }).catch(err => {
-      console.log('err:', err);
-  });
+  // 無限ループを回避する
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await axios.get('http://utan.php.xdomain.jp/lovelivedatabase/api.php?groups=all');
+        setPosts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
   
   console.log(posts);
 
