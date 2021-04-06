@@ -10,12 +10,10 @@ function App () {
         <Switch>
           <Route exact
               path="/"
-              render={() => <Top/>}></Route>
+              ><Top /></Route>
           <Route
-          exact
           path="/profile/:id"
-          render={() => <Profile/>}
-          />
+          ><Profile /></Route>
         </Switch>
       </BrowserRouter>
     </>
