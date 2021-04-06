@@ -2,14 +2,20 @@ import axios from 'axios';
 
 import React, { useState,useEffect } from 'react';
 
-
-import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 import { useParams } from 'react-router-dom';
 
+import ProfileCard from '../components/ProfileCard';
+
+import aqoursImage from '../images/unit_aqours.png'
+import msImage from '../images/unit_ms.png'
+import nijigasakiImage from '../images/unit_nijigasaki.png'
 
 function Profile() {
+
   const params = useParams();
 
   const id = params['id'];
@@ -40,42 +46,49 @@ function Profile() {
     );
   }
 
-  const style = {
-    display:"flex",/* flexbox */
-    justifyContent:"center", /* 水平方向 */
-    alignItems: "center", /* 垂直方向 */
+  function setGroupImege(groupsName){
+    if(groupsName === 'aqours'){
+      const groupsImage = aqoursImage;
+      return groupsImage;
+    }else if(groupsName === 'nizi'){
+      const groupsImage = nijigasakiImage;
+      return groupsImage;
+    }else if(groupsName === 'myu-z'){
+      const groupsImage = msImage;
+      return groupsImage;
+    }
   }
-  const image ={
-    width: '600px',
-  }
-  const description ={
-    width: '300px',
-  }
-//const style ={}
-//const image ={}
+
   return (
     <>      
-    <h1 style={{textAlign:'center'}}>メンバー詳細</h1>
+    <div style={{textAlign: 'center',marginTop: '20px'}}>
+      <img src={setGroupImege(posts[0].groups)} alt='画像'/>
+    </div>
+      <Grid container alignItems="center" justify="center">
         {posts.map((post) => (
-        <>      
-            <div style={style}>
-                <div>
-                    <h2>{post.name}</h2>
-                    <p>CV:{post.CV}</p>
-                    <p>{post.grade}年生</p>
-                    <p>{post.birthday}生まれ</p>
-                    <p>{post.bloodType}型</p>
-                    <p>{post.height}cm</p>
-                    <p>B:{post.B} W:{post.W} H:{post.H}</p>
-                </div>
-                <img style={image} src={post.image} alt='画像'/>
-                <p style={description}>{post.description}</p>
-            </div>
-            <div style={{textAlign: 'center',fontSize: 'large'}}>
-            <a href='/'>戻る</a>
-            </div>
-        </>
+          <>      
+            <Grid item md={3} style={{margin:'10px'}}>
+              <ProfileCard
+                name={post.name} 
+                groups={post.groups}
+                CV={post.CV}  
+                grade={post.grade} 
+                description={post.description}
+                birthday={post.birthday}
+                bloodType={post.bloodType}
+                height={post.height}
+                image={post.image}
+                B={post.B}
+                W={post.W}
+                H={post.H}
+              />
+            </Grid>
+          </>
         ))}
+      </Grid>
+      <div style={{textAlign: 'center',fontSize: 'large',margin: '10px'}}>
+        <Button　href='/' size='large' color='primary'>戻る</Button>
+      </div>
     </>
   );
 }
