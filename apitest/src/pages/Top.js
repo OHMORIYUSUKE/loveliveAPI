@@ -13,6 +13,8 @@ import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Link from '@material-ui/core/Link';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -66,14 +68,18 @@ function Top() {
 
   if(posts.length === 0){
     return(
-    <div style={{ position: 'absolute', top: 0, width: '100%' }}>
-      <LinearProgress />
-    </div>
+      <>
+        <div style={{ position: 'absolute', top: 0, width: '100%' }}>
+          <Header />
+          <LinearProgress />
+        </div>
+      </>
     );
   }
 
   return (
     <>      
+    <Header />
     <Grid container alignItems="center" justify="center">
       <Grid item md={9}>
         <FormControl className={classes.formControl}>
@@ -114,6 +120,7 @@ function Top() {
       </>
       ))}
       </Grid>
+      <Footer />
     </>
   );
 }

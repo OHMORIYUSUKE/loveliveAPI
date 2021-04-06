@@ -9,6 +9,8 @@ import Grid from '@material-ui/core/Grid';
 import { useParams } from 'react-router-dom';
 
 import ProfileCard from '../components/ProfileCard';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import aqoursImage from '../images/unit_aqours.png'
 import msImage from '../images/unit_ms.png'
@@ -40,9 +42,12 @@ function Profile() {
 
   if(posts.length === 0){
     return(
-    <div style={{ position: 'absolute', top: 0, width: '100%' }}>
-      <LinearProgress />
-    </div>
+    <>
+      <div style={{ position: 'absolute', top: 0, width: '100%' }}>
+        <Header />
+        <LinearProgress />
+      </div>
+    </>
     );
   }
 
@@ -61,6 +66,7 @@ function Profile() {
 
   return (
     <>      
+    <Header />
     <div style={{textAlign: 'center',marginTop: '20px'}}>
       <img src={setGroupImege(posts[0].groups)} alt='画像'/>
     </div>
@@ -89,6 +95,7 @@ function Profile() {
       <div style={{textAlign: 'center',fontSize: 'large',margin: '10px'}}>
         <Button　href='/' size='large' color='primary'>戻る</Button>
       </div>
+      <Footer />
     </>
   );
 }
