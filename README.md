@@ -142,10 +142,12 @@ http://utan.php.xdomain.jp/lovelivedatabase/api.php?id=2
 
 ## API 試したい
 
-api.html をダウンロードして、
+`git clone https://github.com/OHMORIYUSUKE/loveliveAPI.git`
 
-```js
-url: "http://utan.php.xdomain.jp/lovelivedatabase/api.php?id=1",//grade groups id
-```
+`cd loveliveAPI`
 
-をいろいろ変更して試してみてください。
+`cd apitest`
+
+`npm install`
+
+`npm start`
