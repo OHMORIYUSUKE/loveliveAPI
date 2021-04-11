@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 160,
     marginBottom: 10,
     marginTop: 20,
+    [theme.breakpoints.down('sm')]: {
+      minWidth: 100,
+    },
   },
 }));
 
@@ -106,6 +109,73 @@ function App() {
         <div style={{ position: 'absolute', top: 0, width: '100%' }}>
           <Header />
           <LinearProgress color='secondary' />
+        </div>
+      </>
+    );
+  }
+
+  if(posts[0]['message'] === 'noData'){
+    return(
+      <>
+        <div style={{ position: 'absolute', top: 0, width: '100%' }}>
+          <Header />
+              <Grid container alignItems="center" justify="center" style={{marginBottom: '30px'}}>
+                <Grid item md={9}>
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="demo-controlled-open-select-label">グループ</InputLabel>
+                  <Select
+                    labelId="demo-controlled-open-select-label"
+                    id="demo-controlled-open-select"
+                    open={open}
+                    onClose={handleClose}
+                    onOpen={handleOpen}
+                    value={group}
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={''}>すべて</MenuItem>
+                    <MenuItem value={'myu-z'}>μ’s</MenuItem>
+                    <MenuItem value={'aqours'}>aqours</MenuItem>
+                    <MenuItem value={'nizi'}>虹ヶ咲</MenuItem>
+                  </Select>
+                </FormControl>
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="demo-controlled-open-select-label">学年</InputLabel>
+                  <Select
+                    labelId="demo-controlled-open-select-label"
+                    id="demo-controlled-open-select"
+                    open={open2}
+                    onClose={handleClose2}
+                    onOpen={handleOpen2}
+                    value={grade}
+                    onChange={handleChange2}
+                  >
+                    <MenuItem value={''}>すべて</MenuItem>
+                    <MenuItem value={'1'}>1年生</MenuItem>
+                    <MenuItem value={'2'}>2年生</MenuItem>
+                    <MenuItem value={'3'}>3年生</MenuItem>
+                  </Select>
+                </FormControl>
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="demo-controlled-open-select-label">血液型</InputLabel>
+                  <Select
+                    labelId="demo-controlled-open-select-label"
+                    id="demo-controlled-open-select"
+                    open={open3}
+                    onClose={handleClose3}
+                    onOpen={handleOpen3}
+                    value={bloodType}
+                    onChange={handleChange3}
+                  >
+                    <MenuItem value={''}>すべて</MenuItem>
+                    <MenuItem value={'A'}>A</MenuItem>
+                    <MenuItem value={'B'}>B</MenuItem>
+                    <MenuItem value={'O'}>O</MenuItem>
+                    <MenuItem value={'AB'}>AB</MenuItem>
+                  </Select>
+                </FormControl>
+                <h3 style={{textAlign: 'center'}}>データがありません。</h3>
+              </Grid>
+            </Grid>
         </div>
       </>
     );
