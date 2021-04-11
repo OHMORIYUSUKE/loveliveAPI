@@ -246,7 +246,16 @@ function App() {
               <PostCard 
                 name={post['name']} 
                 CV={post['CV']}
-                image={post['image']}  
+                image={post['image']}
+                description={post['description']} 
+                groups={post['groups']} 
+                grade={post['grade']}
+                birthday={post['birthday']}
+                bloodType={post['bloodType']}
+                height={post['hight']}
+                B={post['B']}
+                W={post['W']}
+                H={post['H']}
               />
             </Grid>
           </>
