@@ -55,6 +55,11 @@ foreach($posts as $post):
                             'image'=>$post['image']
                         ));
 endforeach;
+
+// データがないとき
+if(count($json) == 0){
+    array_push($json,array('message'=>'noData'));
+}
  
 header("Content-Type: text/javascript; charset=utf-8");
 print(json_encode($json, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
