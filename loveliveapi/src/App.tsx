@@ -252,7 +252,7 @@ function App() {
                 grade={post['grade']}
                 birthday={post['birthday']}
                 bloodType={post['bloodType']}
-                height={post['hight']}
+                height={post['height']}
                 B={post['B']}
                 W={post['W']}
                 H={post['H']}
