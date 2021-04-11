@@ -173,7 +173,7 @@ function App() {
                     <MenuItem value={'AB'}>AB</MenuItem>
                   </Select>
                 </FormControl>
-                <h3 style={{textAlign: 'center'}}>データがありません。</h3>
+                <h3 style={{textAlign: 'center'}}>条件に一致するメンバーはいません。</h3>
               </Grid>
             </Grid>
         </div>
@@ -243,13 +243,11 @@ function App() {
           {posts.map((post,idx_i) => (
           <>
             <Grid item md={3} key={idx_i} style={{margin:'10px'}}>
-            
               <PostCard 
                 name={post['name']} 
                 CV={post['CV']}
                 image={post['image']}  
               />
-              
             </Grid>
           </>
           ))}

@@ -74,25 +74,22 @@ export default function CustomizedDialogs() {
         <DialogContent dividers>
           <Typography gutterBottom>
            <h4>使い方と注意事項</h4>
-           放送年 放送時期をそれぞれ選択してください。
-           サーバーの処理速度の問題で表示まで時間がかかります。
-           気長に待ってください。
+           グループ、学年、血液型を選択してください。
           </Typography>
           <Typography gutterBottom>
             <h4>使ったもの</h4>
             <ul>
-                <li>React(TypeScript)</li>
-                <li>PHP</li>
+                <li>React ( TypeScript )</li>
                 <li>
-                    <a href="https://github.com/Project-ShangriLa/sora-playframework-scala">
-                        ShangriLa API
+                    <a href="https://github.com/OHMORIYUSUKE/loveliveAPI">
+                        ラブライブ API
                     </a>
                 </li>
             </ul>
           </Typography>
           <Typography gutterBottom>
             <h4>コード</h4>
-                <a href="https://github.com/OHMORIYUSUKE/animeApi-PHP">
+                <a href="https://github.com/OHMORIYUSUKE/loveliveAPI">
                     GitHub
                 </a>
           </Typography>
